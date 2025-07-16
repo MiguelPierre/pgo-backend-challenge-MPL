@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    image: pgo-backend-challenge
+    container_name: pgo-backend
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
